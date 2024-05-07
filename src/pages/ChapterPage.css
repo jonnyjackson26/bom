@@ -1,0 +1,21 @@
+span.dialouge {
+    background-color: black;
+    /* Change the background color to yellow */
+    color: black;
+    /* Change the text color to black */
+    font-weight: bold;
+    /* Increase the font weight to make the text bold */
+    /* Add any additional styling properties as needed */
+}
+
+.god {
+    background-color: yellow;
+}
+
+.nephi {
+    background-color: green;
+}
+
+.lehi {
+    background-color: aqua;
+}

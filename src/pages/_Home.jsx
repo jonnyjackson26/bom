@@ -32,7 +32,6 @@ export function Home() {
 
 /*
 TODO:
- - change page titles so it says the book and chapter
  - put nav bar on bottom for mobile
  - fix language dropdown
 
