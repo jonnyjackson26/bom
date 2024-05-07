@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import NavBar from '../components/NavBar';
+import NextButton from '../components/NextButton'
 import { theBookOfBOOKNAMEchapterX } from "../../public/data/_languages.js"
-
+import { getNextButtonInfo, getPrevButtonInfo } from "../utils/next-and-prev-button-info.js"
 import { Context } from "../main";
 
 
@@ -33,6 +34,10 @@ export function ChapterPage({ book, chapter }) {
             <h1>
                 {theBookOfBOOKNAMEchapterX(language, book.bookName, chapter)}
             </h1>
+
+            <NextButton info={getPrevButtonInfo(book, chapter)} />
+            <NextButton info={getNextButtonInfo(book, chapter)} />
+
 
             {verses}
         </>

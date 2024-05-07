@@ -4,10 +4,6 @@ class Book {
         this.bookName = bookName;
         this.urlName = urlName;
     }
-
-    getCoverPicPath() {
-        return `${this.urlName}-cover.jpg`;
-    }
 }
 
 
