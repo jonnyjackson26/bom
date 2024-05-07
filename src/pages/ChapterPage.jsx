@@ -2,15 +2,18 @@ import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import NextButton from '../components/NextButton'
+import DocumentTitle from "../components/DocumentTitle.jsx";
 import { theBookOfBOOKNAMEchapterX } from "../../public/data/_languages.js"
 import { getNextButtonInfo, getPrevButtonInfo } from "../utils/next-and-prev-button-info.js"
 import { Context } from "../main";
+import myData from "../../public/data/_languages.js"
 
 
 export function ChapterPage({ book, chapter }) {
     const [verses, setVerses] = useState([]);
     const [language, setLanguage] = useContext(Context);
 
+    DocumentTitle(myData[language][book.urlName] + " " + chapter);
 
     useEffect(() => {
         const fetchVerses = async () => {
@@ -32,7 +35,7 @@ export function ChapterPage({ book, chapter }) {
         <>
             <NavBar book={book} chapter={chapter} />
             <h1>
-                {theBookOfBOOKNAMEchapterX(language, book.bookName, chapter)}
+                {theBookOfBOOKNAMEchapterX(language, myData[language][book.urlName], chapter)}
             </h1>
 
             <NextButton info={getPrevButtonInfo(book, chapter)} />

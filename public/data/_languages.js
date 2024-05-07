@@ -1,6 +1,7 @@
 const myData = {
     english: {
         "book-of-mormon": "The Book of Mormon: Another Testament of Jesus Christ",
+        "bookOfMormon": "The Book of Mormon",
         "english": "english",
         "french": "french",
         "spanish": "spanish",
@@ -24,6 +25,7 @@ const myData = {
     },
     spanish: {
         "book-of-mormon": "El Libro de Mormón: Otro Testamento de Jesucristo",
+        "bookOfMormon": "El Libro de Mormón",
         "english": "ingles",
         "french": "frances",
         "spanish": "espanol",
@@ -47,6 +49,7 @@ const myData = {
     },
     french: {
         "book-of-mormon": "Le Livre de Mormon: Un Autre Témoignage de Jésus-Christ",
+        "bookOfMormon": "Le Livre de Mormon",
         "english": "anglais",
         "french": "français",
         "spanish": "espagnol",
@@ -70,6 +73,7 @@ const myData = {
     },
     german: {
         "book-of-mormon": "Das Buch Mormon: Ein weiteres Zeugnis von Jesus Christus",
+        "bookOfMormon": "Das Buch Mormon",
         "english": "englisch",
         "french": "französisch",
         "spanish": "spanisch",

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import NavBar from "../components/NavBar";
 import React, { useState, useEffect, useContext } from 'react';
+import DocumentTitle from "../components/DocumentTitle.jsx";
 
 import myData, { theBookOfBOOKNAME } from "../../public/data/_languages.js"
 
@@ -8,6 +9,8 @@ import { Context } from "../main";
 
 export function BookPage({ book }) {
     const [language, setLanguage] = useContext(Context);
+
+    DocumentTitle(myData[language][book.urlName]);
 
     const chapterLinks = [];
     for (let i = 1; i <= book.numOfChapters; i++) {

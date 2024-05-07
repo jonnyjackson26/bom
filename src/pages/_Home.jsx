@@ -3,12 +3,15 @@ import React, { useState, useEffect, useContext } from 'react';
 import books from '../../public/data/books.js';
 import NavBar from "../components/NavBar";
 import myData from "../../public/data/_languages.js"
+import DocumentTitle from "../components/DocumentTitle.jsx";
 
 import { Context } from "../main"; //can make custom hook
 
 
 export function Home() {
     const [language, setLanguage] = useContext(Context);
+
+    DocumentTitle(myData[language]["bookOfMormon"]);
 
     return (
         <>
