@@ -5,6 +5,7 @@ import NextButton from '../components/NextButton'
 import DocumentTitle from "../components/DocumentTitle.jsx";
 import { theBookOfBOOKNAMEchapterX } from "../../public/data/_languages.js"
 import { getNextButtonInfo, getPrevButtonInfo } from "../utils/next-and-prev-button-info.js"
+import { substringForWords } from "../utils/substringForWords.js"
 import { Context } from "../main";
 import myData from "../../public/data/_languages.js"
 import books from "../../public/data/books.js"
@@ -39,9 +40,12 @@ export function ChapterPage({ book, chapter }) {
                         // If showDialogue is true and there is a dialogue object for this verse, add <span> around the line
                         return (
                             <p key={index}>
+                                {verseNumber} {' '}
+                                {substringForWords(line, 0, dialogueForVerse.startWord)} {' '}
                                 <span className={`dialogue ${dialogueForVerse.who}`}>
-                                    {verseNumber} {line}
+                                    {substringForWords(line, dialogueForVerse.startWord, dialogueForVerse.endWord)} {' '}
                                 </span>
+                                {substringForWords(line, dialogueForVerse.endWord, "end")}
                             </p>
                         );
                     } else {
