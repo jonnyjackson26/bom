@@ -6,6 +6,7 @@ import myData from "../../public/data/_languages.js"
 import DocumentTitle from "../components/DocumentTitle.jsx";
 
 import { Context } from "../main"; //can make custom hook
+import characters from "../../public/data/characters.js";
 
 
 export function Home() {
@@ -23,6 +24,14 @@ export function Home() {
             {books.map((book) => (
                 <Link key={book.urlName} to={`/${book.urlName}`}>
                     {myData[language][book.urlName]} {/* Worte von Mormon or Words of Mormon */}
+                </Link>
+            ))}
+
+            {/*characters */}
+            <h1>Characters:</h1>
+            {characters.map((character) => (
+                <Link key={character.name} to={`/${character.name}`}>
+                    {character.name}
                 </Link>
             ))}
         </>
