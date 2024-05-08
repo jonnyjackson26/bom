@@ -7,7 +7,7 @@ import characters from "../../public/data/characters.js"
 
 
 export function CharactersPage() {
-    DocumentTitle("Tree - Book of Mormon");
+    DocumentTitle("Characters in Book of Mormon");
 
     return (
         <>

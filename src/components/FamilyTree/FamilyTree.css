@@ -1,4 +1,4 @@
-.selectedCharacter {
+.self {
     color: green;
 }
 
@@ -32,6 +32,8 @@
 }
 
 .siblingsRow {
+    display: flex;
+    flex-direction: row;
     border: 1px solid red;
     height: 50px;
 }

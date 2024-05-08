@@ -13,7 +13,7 @@ class Character {
     }
 }
 
-/*const characterData = [
+const characterData = [
     { id: "<lehi>", name: "Lehi", fatherId: null, motherId: null, childrenIDs: ["<nephi>", "<laman>", "<lemuel>", "<sam>", "<jacobSonOfLehi>", "<josephSonOfLehi>"], spouseIDs: ["<sariah>"], descendentOf: "<josephOfOld> bur also manasses alma 10:3", description: "1 Nephi 1:4", nicknames: [], gender: 0 },
     { id: "<sariah>", name: "Sariah", fatherId: null, motherId: null, childrenIDs: ["<nephi>", "<laman>", "<lemuel>", "<sam>", "<jacobSonOfLehi>", "<josephSonOfLehi>"], spouseIDs: ["<lehi>"], descendentOf: "1 Nephi 2:5", description: "", nicknames: [], gender: 1 },
     { id: "<nephi>", name: "Nephi", fatherId: "<lehi>", motherId: "<sariah>", childrenIDs: ["<nephisKids>"], spouseIDs: ["<daughterOfIshmael2>"], descendentOf: "", description: "1 Nephi 1:1, 16:7", nicknames: [], gender: 0 },
@@ -55,10 +55,10 @@ class Character {
     { id: "<mosiahYounger>", name: "", fatherId: "<kingBenjamin>", motherId: null, childrenIDs: [], spouseIDs: [], descendentOf: "", description: "", nicknames: [], gender: 0 },
     { id: "<Helorum>", name: "", fatherId: "<kingBenjamin>", motherId: null, childrenIDs: [], spouseIDs: [], descendentOf: "", description: "", nicknames: [], gender: 0 },
     { id: "<HelamanSonOfKingBenjamin>", name: "Helaman", fatherId: "<kingBenjamin>", motherId: null, childrenIDs: [], spouseIDs: [], descendentOf: "", description: "", nicknames: [], gender: 0 },
-];*/
+];
 
 
-const characterData = [
+/*const characterData = [
     { id: "<jonny>", name: "jonny", fatherId: "<joe>", motherId: "<sarah>", childrenIDs: [], spouseIDs: [], descendentOf: null, description: null, nicknames: [], gender: 0 },
     { id: "<jessy>", name: "jessy", fatherId: "<joe>", motherId: "<sarah>", childrenIDs: [], spouseIDs: [], descendentOf: null, description: null, nicknames: [], gender: 0 },
     { id: "<jacob>", name: "jacob", fatherId: "<joe>", motherId: "<sarah>", childrenIDs: [], spouseIDs: [], descendentOf: null, description: null, nicknames: [], gender: 0 },
@@ -66,7 +66,7 @@ const characterData = [
     { id: "<joe>", name: "joe", fatherId: "<monte>", motherId: "<patricia>", childrenIDs: ["<jonny>", "<jessy>", "<jacob>"], spouseIDs: ["<sarah>"], descendentOf: null, description: null, nicknames: [], gender: 0 },
     { id: "<camila>", name: "camila", fatherId: "<ben>", motherId: "<hazel>", childrenIDs: ["<sarah>", "<matt>", "<elisa>", "<jenni>"], spouseIDs: ["<raymond>"], descendentOf: null, description: null, nicknames: [], gender: 0 },
 
-];
+];*/
 
 
 
