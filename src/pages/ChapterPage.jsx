@@ -32,20 +32,47 @@ export function ChapterPage({ book, chapter }) {
 
 
                 //dialouge
+                const dialoguesForChapter = dialogue.filter(dialogue =>
+                    dialogue.bookIndex === books.findIndex(item => item.urlName === book.urlName) && dialogue.chapterIndex === chapter
+                );
                 const modifiedVerses = lines.map((line, index) => {
                     const verseNumber = index + 1;
-                    const dialogueForVerse = dialogue.find(dialogue => dialogue.bookIndex === books.findIndex(item => item.urlName === book.urlName) && dialogue.chapterIndex === chapter && dialogue.startVerse === verseNumber);
+                    const dialogueForVerse = dialoguesForChapter.find(dialogue =>
+                        dialogue.startVerse <= verseNumber && dialogue.endVerse >= verseNumber
+                    );
 
-                    if (showDialogue && dialogueForVerse) {
+                    if (showDialogue && dialogueForVerse && dialogueForVerse.startVerse == verseNumber && dialogueForVerse.endVerse == verseNumber) {  /* the quote starts and ends in the same verse */
                         // If showDialogue is true and there is a dialogue object for this verse, add <span> around the line
                         return (
                             <p key={index}>
                                 {verseNumber} {' '}
                                 {substringForWords(line, 0, dialogueForVerse.startWord)} {' '}
                                 <span className={`dialogue ${dialogueForVerse.who}`}>
-                                    {substringForWords(line, dialogueForVerse.startWord, dialogueForVerse.endWord)} {' '}
+                                    {substringForWords(line, dialogueForVerse.startWord, dialogueForVerse.endWord)}
                                 </span>
-                                {substringForWords(line, dialogueForVerse.endWord, "end")}
+                                {' '}{substringForWords(line, dialogueForVerse.endWord, "end")}
+                            </p>
+                        );
+                    } else if (showDialogue && dialogueForVerse && dialogueForVerse.startVerse <= verseNumber && dialogueForVerse.endVerse >= verseNumber) { /* the quote spans more than one verse */
+                        // Determine the start and end word indices within the line for the multi-verse-spanning quote
+                        const startWordIndex = dialogueForVerse.startVerse === verseNumber ? dialogueForVerse.startWord : 0;
+                        const endWordIndex = dialogueForVerse.endVerse === verseNumber ? dialogueForVerse.endWord : line.split(' ').length;
+
+                        return (
+                            <p key={index}>
+                                {/*surround verseNumber with span only if startWordIndex is 0*/}
+                                {startWordIndex === 0 ? (
+                                    <span className={`dialogue ${dialogueForVerse.who}`}>
+                                        {verseNumber}{' '}
+                                    </span>
+                                ) : (
+                                    verseNumber + ' '
+                                )}
+                                {substringForWords(line, 0, startWordIndex)}{' '}
+                                <span className={`dialogue ${dialogueForVerse.who}`}>
+                                    {substringForWords(line, startWordIndex, endWordIndex)}
+                                </span>
+                                {' '}{substringForWords(line, endWordIndex, "end")}
                             </p>
                         );
                     } else {
