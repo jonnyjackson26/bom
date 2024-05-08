@@ -1,3 +1,44 @@
-h1 {
+.selectedCharacter {
+    color: green;
+}
+
+.father {
     color: red;
+}
+
+.mother {
+    color: blue;
+}
+
+.sibling {
+    color: lime;
+}
+
+.child {
+    color: blueviolet;
+}
+
+.treeBox {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+}
+
+.parentsRow {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid orange;
+    height: 50px;
+}
+
+.siblingsRow {
+    border: 1px solid red;
+    height: 50px;
+}
+
+.childrensRow {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid yellow;
+    height: 50px;
 }
