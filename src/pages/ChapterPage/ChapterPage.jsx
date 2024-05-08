@@ -1,17 +1,17 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import NavBar from '../components/NavBar';
-import NextButton from '../components/NextButton'
-import DocumentTitle from "../components/DocumentTitle.jsx";
-import { theBookOfBOOKNAMEchapterX } from "../../public/data/_languages.js"
-import { getNextButtonInfo, getPrevButtonInfo } from "../utils/next-and-prev-button-info.js"
-import { substringForWords } from "../utils/substringForWords.js"
-import { Context } from "../main";
-import myData from "../../public/data/_languages.js"
-import books from "../../public/data/books.js"
-import "../pages/ChapterPage.css"
+import NavBar from '../../components/NavBar.jsx';
+import NextButton from '../../components/NextButton.jsx'
+import DocumentTitle from "../../components/DocumentTitle.jsx";
+import { theBookOfBOOKNAMEchapterX } from "../../../public/data/_languages.js"
+import { getNextButtonInfo, getPrevButtonInfo } from "../../utils/next-and-prev-button-info.js"
+import { substringForWords } from "../../utils/substringForWords.js"
+import { Context } from "../../main.jsx";
+import myData from "../../../public/data/_languages.js"
+import books from "../../../public/data/books.js"
+import "../ChapterPage/ChapterPage.css"
 
-import dialogue from "../../public/data/dialouge.js"
+import dialogue from "../../../public/data/dialouge.js"
 
 
 export function ChapterPage({ book, chapter }) {

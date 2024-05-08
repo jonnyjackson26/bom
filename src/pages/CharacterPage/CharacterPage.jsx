@@ -1,13 +1,12 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import NavBar from '../components/NavBar.jsx';
-import DocumentTitle from "../components/DocumentTitle.jsx";
-import { Context } from "../main.jsx";
-import "../pages/Character.css"
-import dialogue from "../../public/data/dialouge.js"
+import NavBar from '../../components/NavBar.jsx';
+import DocumentTitle from "../../components/DocumentTitle.jsx";
+import { Context } from "../../main.jsx";
+import "../CharacterPage/CharacterPage.css"
 
 
-export function Character({ character }) {
+export function CharacterPage({ character }) {
     DocumentTitle(character.name);
 
     // Function to handle null values

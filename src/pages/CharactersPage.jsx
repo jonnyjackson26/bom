@@ -3,11 +3,10 @@ import { Link } from 'react-router-dom';
 import NavBar from '../components/NavBar.jsx';
 import DocumentTitle from "../components/DocumentTitle.jsx";
 import { Context } from "../main.jsx";
-import "../pages/FamilyTree.css"
 import characters from "../../public/data/characters.js"
 
 
-export function FamilyTree() {
+export function CharactersPage() {
     DocumentTitle("Tree - Book of Mormon");
 
     return (

@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import { Home } from './pages/_Home'
 import { BookPage } from './pages/BookPage'
-import { Character } from './pages/Character.jsx'
-import { FamilyTree } from './pages/FamilyTree.jsx'
+import { CharacterPage } from './pages/CharacterPage/CharacterPage.jsx'
+import { CharactersPage } from './pages/CharactersPage.jsx'
 import { createHashRouter, RouterProvider } from 'react-router-dom'
 import books from '../public/data/books'
 import characters from '../public/data/characters.js'
-import { ChapterPage } from './pages/ChapterPage'
+import { ChapterPage } from './pages/ChapterPage/ChapterPage.jsx'
 import NavBar from './components/NavBar'
 let routerList = [];
 
@@ -34,11 +34,11 @@ for (let i = 0; i < books.length; i++) {
 for (let i = 0; i < characters.length; i++) {
   let pathElement = {};
   pathElement["path"] = "/characters/" + characters[i].id;
-  pathElement["element"] = <Character character={characters[i]} />
+  pathElement["element"] = <CharacterPage character={characters[i]} />
   routerList.push(pathElement);
 }
-//for family tree
-routerList.push({ path: "/characters", element: <FamilyTree /> });
+//for characters page
+routerList.push({ path: "/characters", element: <CharactersPage /> });
 
 
 
