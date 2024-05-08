@@ -4,6 +4,7 @@ import './index.css'
 import { Home } from './pages/_Home'
 import { BookPage } from './pages/BookPage'
 import { Character } from './pages/Character.jsx'
+import { FamilyTree } from './pages/FamilyTree.jsx'
 import { createHashRouter, RouterProvider } from 'react-router-dom'
 import books from '../public/data/books'
 import characters from '../public/data/characters.js'
@@ -36,6 +37,9 @@ for (let i = 0; i < characters.length; i++) {
   pathElement["element"] = <Character character={characters[i]} />
   routerList.push(pathElement);
 }
+//for family tree
+routerList.push({ path: "/characters", element: <FamilyTree /> });
+
 
 
 const router = createHashRouter([

@@ -6,7 +6,6 @@ import myData from "../../public/data/_languages.js"
 import DocumentTitle from "../components/DocumentTitle.jsx";
 
 import { Context } from "../main"; //can make custom hook
-import characters from "../../public/data/characters.js";
 
 
 export function Home() {
@@ -28,12 +27,7 @@ export function Home() {
             ))}
 
             {/*characters */}
-            <h1>Characters:</h1>
-            {characters.map((character) => (
-                <Link key={character.id} to={`/characters/${character.id}`}>
-                    {character.name}
-                </Link>
-            ))}
+            <Link key="family_tree" to="/characters">Character Tree of BOM</Link>
         </>
     )
 }

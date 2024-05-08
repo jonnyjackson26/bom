@@ -15,6 +15,8 @@ export function Character({ character }) {
 
     return (
         <>
+            <NavBar book={null} chapter={null} />
+
             <div className="character-container">
                 <h1>{character.name}</h1>
                 <p>Father's name: {formatValue(character.fatherName)}</p>
