@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import NavBar from '../../components/NavBar.jsx';
-import NextButton from '../../components/NextButton.jsx'
+import NavBar from '../../components/NavBar/NavBar.jsx';
+import NextButton from '../../components/NextButton/NextButton.jsx'
 import DocumentTitle from "../../components/DocumentTitle.jsx";
 import { theBookOfBOOKNAMEchapterX } from "../../../public/data/_languages.js"
 import { getNextButtonInfo, getPrevButtonInfo } from "../../utils/next-and-prev-button-info.js"

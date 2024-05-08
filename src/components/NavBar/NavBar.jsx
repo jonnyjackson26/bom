@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
 import './NavBar.css'
-import Path from './Path';
-import books from '../../public/data/books.js';
-import myData from "../../public/data/_languages.js"
+import Path from '../Path/Path.jsx';
+import books from '../../../public/data/books.js';
+import myData from "../../../public/data/_languages.js"
 
-import { Context } from "../main";
+import { Context } from "../../main.jsx";
 
 const NavBar = ({ book, chapter }) => {
     const [language, setLanguage] = useContext(Context);

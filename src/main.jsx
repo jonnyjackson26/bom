@@ -9,7 +9,7 @@ import { createHashRouter, RouterProvider } from 'react-router-dom'
 import books from '../public/data/books'
 import characters from '../public/data/characters.js'
 import { ChapterPage } from './pages/ChapterPage/ChapterPage.jsx'
-import NavBar from './components/NavBar'
+import NavBar from './components/NavBar/NavBar.jsx'
 let routerList = [];
 
 //each books page

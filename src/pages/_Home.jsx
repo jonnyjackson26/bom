@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import React, { useState, useEffect, useContext } from 'react';
 import books from '../../public/data/books.js';
-import NavBar from "../components/NavBar";
+import NavBar from "../components/NavBar/NavBar.jsx";
 import myData from "../../public/data/_languages.js"
 import DocumentTitle from "../components/DocumentTitle.jsx";
 

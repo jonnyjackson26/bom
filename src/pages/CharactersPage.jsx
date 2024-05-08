@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import NavBar from '../components/NavBar.jsx';
+import NavBar from '../components/NavBar/NavBar.jsx';
 import DocumentTitle from "../components/DocumentTitle.jsx";
 import { Context } from "../main.jsx";
 import characters from "../../public/data/characters.js"

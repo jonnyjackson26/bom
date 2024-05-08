@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import NavBar from "../components/NavBar";
+import NavBar from "../components/NavBar/NavBar.jsx";
 import React, { useState, useEffect, useContext } from 'react';
 import DocumentTitle from "../components/DocumentTitle.jsx";
 

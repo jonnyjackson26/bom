@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import NavBar from '../../components/NavBar.jsx';
+import NavBar from '../../components/NavBar/NavBar.jsx';
 import DocumentTitle from "../../components/DocumentTitle.jsx";
 import { Context } from "../../main.jsx";
 import "../CharacterPage/CharacterPage.css"
+import { FamilyTree } from "../../components/FamilyTree/FamilyTree.jsx"
 
 
 export function CharacterPage({ character }) {
@@ -26,6 +27,8 @@ export function CharacterPage({ character }) {
                 <p>Gender: {character.gender === 0 ? "Male" : "Female"}</p>
                 <p>Description: {formatValue(character.description)}</p>
             </div>
+
+            <FamilyTree character={character} />
         </>
     );
 }
