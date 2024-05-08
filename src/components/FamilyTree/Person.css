@@ -1,0 +1,23 @@
+.person a {
+    color: black;
+}
+
+.self {
+    background-color: green;
+}
+
+.father {
+    background-color: red;
+}
+
+.mother {
+    background-color: blue;
+}
+
+.sibling {
+    background-color: lime;
+}
+
+.child {
+    background-color: blueviolet;
+}
