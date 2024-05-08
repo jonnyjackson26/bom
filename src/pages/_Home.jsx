@@ -30,7 +30,7 @@ export function Home() {
             {/*characters */}
             <h1>Characters:</h1>
             {characters.map((character) => (
-                <Link key={character.name} to={`/${character.name}`}>
+                <Link key={character.id} to={`/characters/${character.id}`}>
                     {character.name}
                 </Link>
             ))}

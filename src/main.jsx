@@ -32,7 +32,7 @@ for (let i = 0; i < books.length; i++) {
 //for each character
 for (let i = 0; i < characters.length; i++) {
   let pathElement = {};
-  pathElement["path"] = "/" + characters[i].name;
+  pathElement["path"] = "/characters/" + characters[i].id;
   pathElement["element"] = <Character character={characters[i]} />
   routerList.push(pathElement);
 }
