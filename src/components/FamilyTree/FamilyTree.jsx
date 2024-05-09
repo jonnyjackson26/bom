@@ -67,7 +67,12 @@ export function FamilyTree({ character }) {
                 <div className="childrensRow">
                     {children &&
                         children.map((child) => (
-                            <Person character={child} relation="child" />
+                            <>
+                                <Person character={child} relation="child" />
+                                {child.getSpouses().length > 0 && (
+                                    <Person character={child.getSpouses()[0]} relation="childinlaw" />
+                                )}
+                            </>
                         ))
                     }
                 </div>
