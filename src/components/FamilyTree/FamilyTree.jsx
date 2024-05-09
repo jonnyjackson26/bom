@@ -6,16 +6,13 @@ import { Person } from "./Person.jsx"
 
 
 export function FamilyTree({ character }) {
-    const father = character.fatherId != null ? getCharacterById(character.fatherId) : null;
-    const mother = character.motherId != null ? getCharacterById(character.motherId) : null;
-    const children = character.childrenIDs != null ? getCharactersByIds(character.childrenIDs) : null;
-    const siblings = ((father && father.childrenIDs != null) && (mother && mother.childrenIDs != null)) ? getCharactersByIds(father.childrenIDs.filter(id => mother.childrenIDs.includes(id))) : null; //the common values shared between father.childrenIDs and mother.childrenIDs
-    const descendant = character.descendentOf != null ? getCharacterById(character.descendentOf) : null;
-    //grandparents
-    const dadsdad = (father && father.fatherId != null) ? getCharacterById(father.fatherId) : null;
-    const dadsmom = (father && father.motherId != null) ? getCharacterById(father.motherId) : null;
-    const momsdad = (mother && mother.fatherId != null) ? getCharacterById(mother.fatherId) : null;
-    const momsmom = (mother && mother.motherId != null) ? getCharacterById(mother.motherId) : null;
+    const father = character.getFather();
+    const mother = character.getMother();
+    const children = character.getChildren();
+    const siblings = character.getSiblings();
+    const spouses = character.getSpouses();
+    const descendant = character.getDescendant();
+
     //grandchildren
     let grandchildren = [];
     if (children) {
@@ -25,33 +22,16 @@ export function FamilyTree({ character }) {
             }
         }
     }
-    //spouse(s)
-    const spouses = character.getSpouses();
-    //cuañados (spanish for brothers/sisters in law). my siblings spouses
-    const cuañados = []
-    if (siblings) {
-        for (let i = 0; i < siblings.length; i++) {
-            for (let j = 0; j < siblings[i].spouseIDs.length; j++) {
-                cuañados.push(getCharacterById(siblings[i].spouseIDs[j]))
-            }
-        }
-    }
-    //tios (spanish for aunts and uncles). my parents siblings
-    const tios = []
-    //sobrinos (spanish for nieces and nephews). my siblings children
-    const sobrinos = []
-    //primos (spanish for cousins). my parents siblings children
-    const primos = []
 
-
+    //in the middle row, shows SELF, one wife*, all siblings*, and each of their wives* (*IF APPLICABLE)
     return (
         <>
             <div className="treeBox">
-                {(dadsdad || dadsmom) && <div className="grandparentsRow">
-                    {dadsdad && <Person character={dadsdad} relation="grandparent" />}
-                    {dadsmom && <Person character={dadsmom} relation="grandparent" />}
-                    {momsdad && <Person character={momsdad} relation="grandparent" />}
-                    {momsmom && <Person character={momsmom} relation="grandparent" />}
+                {<div className="grandparentsRow">
+                    {father && father.getFather() && <Person character={father.getFather()} relation="grandparent" />}
+                    {father && father.getMother() && <Person character={father.getMother()} relation="grandparent" />}
+                    {mother && mother.getFather() && <Person character={mother.getFather()} relation="grandparent" />}
+                    {mother && mother.getMother() && <Person character={mother.getMother()} relation="grandparent" />}
                 </div>}
 
                 {(father || mother) && <div className="parentsRow"> {/* the father || mother makes the row only appear if there is a parent. This is a design choice */}
@@ -64,22 +44,6 @@ export function FamilyTree({ character }) {
                 </div>}
 
                 <div className="siblingsRow">
-                    {/*spouses */}
-                    {/*{spouses &&
-                        spouses.map((spouse) => (
-                            <Person character={spouse} relation="spouse" />
-                        ))
-                    }*/}
-
-                    {/*cuañados */}
-                    {/*{cuañados &&
-                        cuañados.map((cuañado) => (
-                            <Person character={cuañado} relation="cuañado" />
-                        ))
-                    }*/}
-
-
-
                     {/*siblings */}
                     {siblings &&
                         siblings.map((sibling) => (
@@ -98,6 +62,7 @@ export function FamilyTree({ character }) {
                     }
                     {/*if they have no siblings they wouldnt be displayed otherwise */}
                     {!siblings && <Person character={character} relation={'self'} />}
+                    {!siblings && spouses && spouses.length > 0 && <Person character={spouses[0]} relation={'spouse'} />}
                 </div>
                 <div className="childrensRow">
                     {children &&
