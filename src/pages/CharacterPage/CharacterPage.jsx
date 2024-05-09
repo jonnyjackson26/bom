@@ -23,9 +23,9 @@ export function CharacterPage({ character }) {
                 <p>Mother's name: {formatValue(character.motherName)}</p>
                 <p>Children IDs: {character.childrenIDs.map(formatValue).join(", ")}</p>
                 <p>Spouse IDs: {character.spouseIDs.map(formatValue).join(", ")}</p>
-                <p>Nicknames: {character.nicknames.map(formatValue).join(", ")}</p>
+                {/*<p>Nicknames: {character.nicknames.map(formatValue).join(", ")}</p>
                 <p>Gender: {character.gender === 0 ? "Male" : "Female"}</p>
-                <p>Description: {formatValue(character.description)}</p>
+    <           p>Description: {formatValue(character.description)}</p>*/}
             </div>
 
             <FamilyTree character={character} />

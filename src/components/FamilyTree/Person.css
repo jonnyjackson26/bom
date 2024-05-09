@@ -4,20 +4,39 @@
 
 .self {
     background-color: green;
+    font-size: 2em;
+}
+
+.descendant {
+    background-color: burlywood;
+}
+
+.grandparent {
+    background-color: firebrick;
+    font-size: .75em;
 }
 
 .father {
     background-color: red;
+    font-size: 1em;
 }
 
 .mother {
     background-color: blue;
+    font-size: 1em;
 }
 
 .sibling {
     background-color: lime;
+    font-size: 1.5em;
 }
 
 .child {
     background-color: blueviolet;
+    font-size: 1em;
+}
+
+.grandchild {
+    background-color: firebrick;
+    font-size: .75em;
 }
