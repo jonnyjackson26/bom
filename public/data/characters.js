@@ -46,6 +46,13 @@ class Character {
     getDescendant() {
         return this.getCharacterById(this.descendentOf);
     }
+    getGrandchildren() {
+        const grandchildren = [];
+        this.getChildren().forEach(child => {
+            grandchildren.push(...child.getChildren());
+        });
+        return grandchildren;
+    }
 }
 
 //book of mormon

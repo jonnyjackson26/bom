@@ -12,16 +12,7 @@ export function FamilyTree({ character }) {
     const siblings = character.getSiblings();
     const spouses = character.getSpouses();
     const descendant = character.getDescendant();
-
-    //grandchildren
-    let grandchildren = [];
-    if (children) {
-        for (let i = 0; i < children.length; i++) {
-            for (let j = 0; j < children[i].childrenIDs.length; j++) {
-                grandchildren.push(getCharacterById(children[i].childrenIDs[j]))
-            }
-        }
-    }
+    const grandchildren = character.getGrandchildren();
 
     //in the middle row, shows SELF, one wife*, all siblings*, and each of their wives* (*IF APPLICABLE)
     return (
@@ -34,14 +25,25 @@ export function FamilyTree({ character }) {
                     {mother && mother.getMother() && <Person character={mother.getMother()} relation="grandparent" />}
                 </div>}
 
-                {(father || mother) && <div className="parentsRow"> {/* the father || mother makes the row only appear if there is a parent. This is a design choice */}
-                    {father && <Person character={father} relation="father" />}
-                    {mother && <Person character={mother} relation="mother" />}
-                </div>}
-
                 {descendant && <div className='descendantRow'>
                     <Person character={descendant} relation="descendant" />
                 </div>}
+
+                {(father || mother) && <div className="parentsRow"> {/* the father || mother makes the row only appear if there is a parent. This is a design choice */}
+                    {father && <Person character={father} relation="father" />}
+                    {mother && <Person character={mother} relation="mother" />}
+
+                    {/* this comment shows parents siblings (i think) but i remove it because what order do u put them in? there is no intuitve way
+                    {father && father.getSiblings() && father.getSiblings().length > 0 && father.getSiblings().map((tio) => {
+                        return <Person character={tio} relation="tio" />;
+                    })}
+
+                    {mother && mother.getSiblings() && mother.getSiblings().length > 0 && mother.getSiblings().map((tio) => {
+                        return <Person character={tio} relation="tio" />;
+                    })}*/}
+                </div>}
+
+
 
                 <div className="siblingsRow">
                     {/*siblings */}
