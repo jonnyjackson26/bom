@@ -11,6 +11,8 @@ import characters from '../public/data/characters.js'
 import { ChapterPage } from './pages/ChapterPage/ChapterPage.jsx'
 import NavBar from './components/NavBar/NavBar.jsx'
 import { TimelinePage } from './pages/TimelinePage.jsx';
+import timelineEvents from "../public/data/timelineEvents.js"
+import { TimelineEventPage } from "./pages/TimelineEventPage/TimelineEventPage.jsx"
 let routerList = [];
 
 //each books page
@@ -43,7 +45,13 @@ routerList.push({ path: "/characters", element: <CharactersPage /> });
 
 //for timeline page
 routerList.push({ path: "/timeline", element: <TimelinePage /> });
-
+//for each timeline event
+for (let i = 0; i < timelineEvents.length; i++) {
+  let pathElement = {};
+  pathElement["path"] = "/timeline/" + timelineEvents[i].id;
+  pathElement["element"] = <TimelineEventPage timelineEvent={timelineEvents[i]} />
+  routerList.push(pathElement);
+}
 
 const router = createHashRouter([
   {

@@ -19,5 +19,5 @@ const eventsData = [
 
 
 
-const events = eventsData.map(data => new Event(data));
-export default events;
+const timelineEvents = eventsData.map(data => new Event(data));
+export default timelineEvents;
