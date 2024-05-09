@@ -26,7 +26,7 @@ export function FamilyTree({ character }) {
         }
     }
     //spouse(s)
-    const spouses = character.spouseIDs != null ? getCharactersByIds(character.spouseIDs) : null;
+    const spouses = character.getSpouses();
     //cuañados (spanish for brothers/sisters in law). my siblings spouses
     const cuañados = []
     if (siblings) {
@@ -89,7 +89,10 @@ export function FamilyTree({ character }) {
                                     {spouses && spouses.length > 0 && <Person character={spouses[0]} relation={'spouse'} />}
                                 </>
                                 :
-                                <Person character={sibling} relation={'sibling'} />
+                                <>
+                                    <Person character={sibling} relation={'sibling'} />
+                                    {sibling.getSpouses()[0] && <Person character={sibling.getSpouses()[0]} relation={'cuañado'} />}
+                                </>
                             )
                         ))
                     }

@@ -11,6 +11,22 @@ class Character {
         this.nicknames = nicknames;
         this.gender = gender;
     }
+
+    getCharacterById(id) {
+        return characters.find(character => character.id === id);
+    }
+    getCharactersByIds(ids) {
+        return characters.filter(character => ids.includes(character.id));
+    }
+
+    getSpouses() {
+        const spouses = [];
+        this.spouseIDs.forEach(spouseId => {
+            const spouse = this.getCharacterById(spouseId);
+            spouses.push(spouse);
+        });
+        return spouses;
+    }
 }
 
 //book of mormon
