@@ -6,7 +6,6 @@ import { Person } from "./Person.jsx"
 
 
 export function FamilyTree({ character }) {
-    //basic family tree: shows father and mother, siblings with father and mother, and children
     const father = character.fatherId != null ? getCharacterById(character.fatherId) : null;
     const mother = character.motherId != null ? getCharacterById(character.motherId) : null;
     const children = character.childrenIDs != null ? getCharactersByIds(character.childrenIDs) : null;
@@ -26,6 +25,24 @@ export function FamilyTree({ character }) {
             }
         }
     }
+    //spouse(s)
+    const spouses = character.spouseIDs != null ? getCharactersByIds(character.spouseIDs) : null;
+    //cuañados (spanish for brothers/sisters in law). my siblings spouses
+    const cuañados = []
+    if (siblings) {
+        for (let i = 0; i < siblings.length; i++) {
+            for (let j = 0; j < siblings[i].spouseIDs.length; j++) {
+                cuañados.push(getCharacterById(siblings[i].spouseIDs[j]))
+            }
+        }
+    }
+    //tios (spanish for aunts and uncles). my parents siblings
+    const tios = []
+    //sobrinos (spanish for nieces and nephews). my siblings children
+    const sobrinos = []
+    //primos (spanish for cousins). my parents siblings children
+    const primos = []
+
 
     return (
         <>
@@ -47,7 +64,24 @@ export function FamilyTree({ character }) {
                 </div>}
 
                 <div className="siblingsRow">
+                    {/*self */}
                     <Person character={character} relation="self" />
+
+                    {/*spouses */}
+                    {spouses &&
+                        spouses.map((spouse) => (
+                            <Person character={spouse} relation="spouse" />
+                        ))
+                    }
+
+                    {/*cuañados */}
+                    {cuañados &&
+                        cuañados.map((cuañado) => (
+                            <Person character={cuañado} relation="cuañado" />
+                        ))
+                    }
+
+                    {/*siblings */}
                     {siblings &&
                         siblings.map((sibling) => (
                             <Person character={sibling} relation="sibling" />

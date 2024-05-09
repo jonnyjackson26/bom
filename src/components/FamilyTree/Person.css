@@ -31,6 +31,16 @@
     font-size: 1.5em;
 }
 
+.spouse {
+    background-color: pink;
+    font-size: 1.7em;
+}
+
+.cuañado {
+    background-color: palevioletred;
+    font-size: 1.7em;
+}
+
 .child {
     background-color: blueviolet;
     font-size: 1em;
