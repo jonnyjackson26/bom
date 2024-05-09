@@ -9,7 +9,7 @@ export function FamilyTree({ character }) {
     const father = character.fatherId != null ? getCharacterById(character.fatherId) : null;
     const mother = character.motherId != null ? getCharacterById(character.motherId) : null;
     const children = character.childrenIDs != null ? getCharactersByIds(character.childrenIDs) : null;
-    const siblings = ((father && father.childrenIDs != null) && (mother && mother.childrenIDs != null)) ? getCharactersByIds(father.childrenIDs.filter(id => mother.childrenIDs.includes(id) && id !== character.id)) : null; //the common values shared between father.childrenIDs and mother.childrenIDs and not yourself
+    const siblings = ((father && father.childrenIDs != null) && (mother && mother.childrenIDs != null)) ? getCharactersByIds(father.childrenIDs.filter(id => mother.childrenIDs.includes(id))) : null; //the common values shared between father.childrenIDs and mother.childrenIDs
     const descendant = character.descendentOf != null ? getCharacterById(character.descendentOf) : null;
     //grandparents
     const dadsdad = (father && father.fatherId != null) ? getCharacterById(father.fatherId) : null;
@@ -64,29 +64,28 @@ export function FamilyTree({ character }) {
                 </div>}
 
                 <div className="siblingsRow">
-                    {/*self */}
-                    <Person character={character} relation="self" />
-
                     {/*spouses */}
-                    {spouses &&
+                    {/*{spouses &&
                         spouses.map((spouse) => (
                             <Person character={spouse} relation="spouse" />
                         ))
-                    }
+                    }*/}
 
                     {/*cuañados */}
-                    {cuañados &&
+                    {/*{cuañados &&
                         cuañados.map((cuañado) => (
                             <Person character={cuañado} relation="cuañado" />
                         ))
-                    }
+                    }*/}
 
                     {/*siblings */}
                     {siblings &&
                         siblings.map((sibling) => (
-                            <Person character={sibling} relation="sibling" />
+                            <Person character={sibling} relation={sibling.id == character.id ? 'self' : 'sibling'} />
                         ))
                     }
+                    {/*if they have no siblings they wouldnt be displayed otherwise */}
+                    {!siblings && <Person character={character} relation={'self'} />}
                 </div>
                 <div className="childrensRow">
                     {children &&

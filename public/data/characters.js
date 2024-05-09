@@ -18,6 +18,7 @@ class Character {
     { id: "<lehi>", name: "Lehi", fatherId: null, motherId: null, childrenIDs: ["<nephi>", "<laman>", "<lemuel>", "<sam>", "<jacobSonOfLehi>", "<josephSonOfLehi>"], spouseIDs: ["<sariah>"], descendentOf: "<josephOfOld> bur also manasses alma 10:3", description: "1 Nephi 1:4", nicknames: [], gender: 0 },
     { id: "<sariah>", name: "Sariah", fatherId: null, motherId: null, childrenIDs: ["<nephi>", "<laman>", "<lemuel>", "<sam>", "<jacobSonOfLehi>", "<josephSonOfLehi>"], spouseIDs: ["<lehi>"], descendentOf: "1 Nephi 2:5", description: "", nicknames: [], gender: 1 },
     { id: "<nephi>", name: "Nephi", fatherId: "<lehi>", motherId: "<sariah>", childrenIDs: ["<nephisKids>"], spouseIDs: ["<daughterOfIshmael2>"], descendentOf: "", description: "1 Nephi 1:1, 16:7", nicknames: [], gender: 0 },
+    { id: "<nephisKids>", name: "nephisKids", fatherId: "<nephi>", motherId: "<daughterOfIshmael2>", childrenIDs: [], spouseIDs: [], descendentOf: "", description: "", nicknames: [], gender: 0 },
     { id: "<laman>", name: "Laman", fatherId: "<lehi>", motherId: "<sariah>", childrenIDs: ["<lamansKids>"], spouseIDs: ["<daughterOfIshmael3>"], descendentOf: "", description: "1 Nephi 2:5", nicknames: [], gender: 0 },
     { id: "<lemuel>", name: "Lemuel", fatherId: "<lehi>", motherId: "<sariah>", childrenIDs: ["<lemuelsKids>"], spouseIDs: ["<daughterOfIshmael4>"], descendentOf: "", description: "1 Nephi 2:5", nicknames: [], gender: 0 },
     { id: "<sam>", name: "Sam", fatherId: "<lehi>", motherId: "<sariah>", childrenIDs: ["<samsKids>"], spouseIDs: ["<daughterOfIshmael5>"], descendentOf: "", description: "1 Nephi 2:5", nicknames: [], gender: 0 },
@@ -171,9 +172,10 @@ const characterData = [
     { id: "<ephrain>", name: "Ephraim", fatherId: "<joseph>", motherId: "<asenath>", childrenIDs: [], spouseIDs: [] },
 
 
-    { id: "<lehi>", name: "Lehi", fatherId: null, motherId: null, childrenIDs: ["<nephi>", "<laman>", "<lemuel>", "<sam>", "<jacobSonOfLehi>", "<josephSonOfLehi>"], spouseIDs: ["<sariah>"], descendentOf: "<josephOfOld> bur also manasses alma 10:3", description: "1 Nephi 1:4", nicknames: [], gender: 0 },
-    { id: "<sariah>", name: "Sariah", fatherId: null, motherId: null, childrenIDs: ["<nephi>", "<laman>", "<lemuel>", "<sam>", "<jacobSonOfLehi>", "<josephSonOfLehi>"], spouseIDs: ["<lehi>"], descendentOf: "1 Nephi 2:5", description: "", nicknames: [], gender: 1 },
+    { id: "<lehi>", name: "Lehi", fatherId: null, motherId: null, childrenIDs: ["<laman>", "<lemuel>", "<sam>", "<nephi>", "<jacobSonOfLehi>", "<josephSonOfLehi>"], spouseIDs: ["<sariah>"], descendentOf: "<josephOfOld> bur also manasses alma 10:3", description: "1 Nephi 1:4", nicknames: [], gender: 0 },
+    { id: "<sariah>", name: "Sariah", fatherId: null, motherId: null, childrenIDs: ["<laman>", "<lemuel>", "<sam>", "<nephi>", "<jacobSonOfLehi>", "<josephSonOfLehi>"], spouseIDs: ["<lehi>"], descendentOf: "1 Nephi 2:5", description: "", nicknames: [], gender: 1 },
     { id: "<nephi>", name: "Nephi", fatherId: "<lehi>", motherId: "<sariah>", childrenIDs: ["<nephisKids>"], spouseIDs: ["<daughterOfIshmael2>"], descendentOf: "", description: "1 Nephi 1:1, 16:7", nicknames: [], gender: 0 },
+    { id: "<nephisKids>", name: "nephisKids", fatherId: "<nephi>", motherId: "<daughterOfIshmael2>", childrenIDs: [], spouseIDs: [], descendentOf: "", description: "", nicknames: [], gender: 0 },
     { id: "<laman>", name: "Laman", fatherId: "<lehi>", motherId: "<sariah>", childrenIDs: ["<lamansKids>"], spouseIDs: ["<daughterOfIshmael3>"], descendentOf: "", description: "1 Nephi 2:5", nicknames: [], gender: 0 },
     { id: "<lemuel>", name: "Lemuel", fatherId: "<lehi>", motherId: "<sariah>", childrenIDs: ["<lemuelsKids>"], spouseIDs: ["<daughterOfIshmael4>"], descendentOf: "", description: "1 Nephi 2:5", nicknames: [], gender: 0 },
     { id: "<sam>", name: "Sam", fatherId: "<lehi>", motherId: "<sariah>", childrenIDs: ["<samsKids>"], spouseIDs: ["<daughterOfIshmael5>"], descendentOf: "", description: "1 Nephi 2:5", nicknames: [], gender: 0 },
