@@ -78,10 +78,19 @@ export function FamilyTree({ character }) {
                         ))
                     }*/}
 
+
+
                     {/*siblings */}
                     {siblings &&
                         siblings.map((sibling) => (
-                            <Person character={sibling} relation={sibling.id == character.id ? 'self' : 'sibling'} />
+                            (sibling.id == character.id ?
+                                <> {/* if the sibling is the current person */}
+                                    <Person character={sibling} relation={'self'} />
+                                    {spouses && spouses.length > 0 && <Person character={spouses[0]} relation={'spouse'} />}
+                                </>
+                                :
+                                <Person character={sibling} relation={'sibling'} />
+                            )
                         ))
                     }
                     {/*if they have no siblings they wouldnt be displayed otherwise */}
