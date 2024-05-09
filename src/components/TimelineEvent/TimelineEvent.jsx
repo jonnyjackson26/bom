@@ -8,11 +8,15 @@ import "./TimelineEvent.css"
 export function TimelineEvent({ event }) {
 
     return (
-        <>
-            <Link key={event.id} to={`/timeline/${event.id}`}>
-                {event.description} - {event.date}
+        <div className="timelineEventBox">
+            <Link to={`/timeline/${event.id}`}>
+                {event.description}
             </Link>
-        </>
+            <p className="date">{event.date}</p>
+            <p className="reference">{event.reference}</p>
+            <p className="dateReference">{event.dateReference}</p>
+            <img src={event.getImagePath()} alt={event.id} />
+        </div>
     );
 }
 

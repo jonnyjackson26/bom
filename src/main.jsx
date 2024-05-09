@@ -11,7 +11,7 @@ import characters from '../public/data/characters.js'
 import { ChapterPage } from './pages/ChapterPage/ChapterPage.jsx'
 import NavBar from './components/NavBar/NavBar.jsx'
 import { TimelinePage } from './pages/TimelinePage.jsx';
-import timelineEvents from "../public/data/timelineEvents.js"
+import timelineEvents from "../public/data/timeline/timelineEvents.js"
 import { TimelineEventPage } from "./pages/TimelineEventPage/TimelineEventPage.jsx"
 let routerList = [];
 

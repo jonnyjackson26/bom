@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import NavBar from '../components/NavBar/NavBar.jsx';
 import DocumentTitle from "../components/DocumentTitle.jsx";
-import timelineEvents from '../../public/data/timelineEvents.js';
+import timelineEvents from '../../public/data/timeline/timelineEvents.js';
 import { TimelineEvent } from "../components/TimelineEvent/TimelineEvent.jsx"
 
 
@@ -15,7 +15,7 @@ export function TimelinePage() {
             <h1>Book of Mormon Timeline</h1>
 
             {timelineEvents.map((event) => (
-                <TimelineEvent event={event} />
+                <TimelineEvent key={event.id} event={event} />
             ))}
         </>
 
