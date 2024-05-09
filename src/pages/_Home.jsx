@@ -28,6 +28,9 @@ export function Home() {
 
             {/*characters */}
             <Link key="family_tree" to="/characters">Character Tree of BOM</Link>
+
+            {/*timeline */}
+            <Link key="timeline" to="/timeline">Timeline of BOM</Link>
         </>
     )
 }

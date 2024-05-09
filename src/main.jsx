@@ -10,6 +10,7 @@ import books from '../public/data/books'
 import characters from '../public/data/characters.js'
 import { ChapterPage } from './pages/ChapterPage/ChapterPage.jsx'
 import NavBar from './components/NavBar/NavBar.jsx'
+import { TimelinePage } from './pages/TimelinePage.jsx';
 let routerList = [];
 
 //each books page
@@ -40,6 +41,8 @@ for (let i = 0; i < characters.length; i++) {
 //for characters page
 routerList.push({ path: "/characters", element: <CharactersPage /> });
 
+//for timeline page
+routerList.push({ path: "/timeline", element: <TimelinePage /> });
 
 
 const router = createHashRouter([
